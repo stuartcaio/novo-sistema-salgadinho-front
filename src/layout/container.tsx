@@ -9,7 +9,6 @@ const Container = () => {
     return (
         <section>
             <Header />
-
             <NavBar />
 
             <main id="container">

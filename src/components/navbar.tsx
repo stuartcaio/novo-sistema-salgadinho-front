@@ -12,19 +12,15 @@ const NavBar = () => {
                     <li>
                         <Link to='/'> <span> <FaHome /> </span> Home </Link>
                     </li>
-
                     <li>
                         <Link to='/schedule'> <span> <GrSchedules /> </span> Agenda </Link>
                     </li>
-
                     <li>
                         <Link to='/users'> <span> <FaUsers /> </span> Usuários </Link>
                     </li>
-
                     <li>
                         <Link to='/companies'> <span> <FaBuilding /> </span> Empresas </Link>
                     </li>
-
                     <li>
                         <Link to='/employees'> <span> <FaUsers /> </span> Funcionários </Link>
                     </li>
