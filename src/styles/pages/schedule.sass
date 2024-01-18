@@ -1,0 +1,48 @@
+@use '../variables'
+
+#schedule-page
+
+    .schedules
+        display: flex
+        gap: 5%
+
+        .schedule__schedule
+            h2
+                font-size: 2em
+                text-align: center
+                padding: .3em
+                border-top-right-radius: variables.$card-border
+                border-top-left-radius: variables.$card-border
+                background-color: variables.$color-main
+
+        .schedule__items
+            display: flex
+            flex-direction: column
+            gap: 1.5em
+
+            h2
+                font-size: 2em
+                width: 120%
+                padding: .3em
+                border-radius: variables.$card-border
+                background-color: variables.$color-main
+
+@media screen and (min-width: 1920px)
+
+    #schedule-page
+
+        .schedules
+            display: flex
+            gap: 5%
+
+            .schedule__schedule
+                h2
+                    font-size: 2.5em
+                    padding: .3em
+
+            .schedule__items
+
+                h2
+                    font-size: 2.5em
+                    width: 130%
+                    padding: .3em

@@ -1,0 +1,44 @@
+@use '../variables'
+
+#aside
+    height: 100%
+    width: 5%
+    top: 11.8%
+    position: fixed
+    transition: width 0.3s ease
+    overflow: hidden
+    white-space: nowrap
+    background-color: variables.$color-secondary
+
+    .aside_list
+        display: flex
+        flex-direction: column
+        margin-top: 1em
+        gap: 1.5em
+
+        li
+            display: flex
+            align-items: center
+            height: 3em
+
+            &:hover
+                background-color: variables.$color-main
+
+            span
+                margin: 0 1em 0 .5em
+                font-size: 1.2em
+
+        a
+            font-size: 1.2em
+            margin-left: .5em
+
+    &:hover
+        width: 16%
+
+@media screen and (min-width: 1920px)
+    #aside
+        top: 8.1%
+        width: 3.7%
+
+        &:hover
+            width: 12%

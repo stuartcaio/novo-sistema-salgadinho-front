@@ -1,0 +1,28 @@
+@use '../variables'
+
+#paginate
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 1em
+    margin: 2em 0
+
+    span
+        font-size: 18px
+        font-weight: bold
+
+    button
+        max-width: 100%
+        padding: .5em
+        font-size: 16px
+        font-weight: bold
+        text-align: center
+        border: none
+        border-radius: variables.$card-border
+        background-color: variables.$color-main
+
+        cursor: pointer
+        transition: .5s
+
+        &:hover
+            background-color: variables.$color-secondary

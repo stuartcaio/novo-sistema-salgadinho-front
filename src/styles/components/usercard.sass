@@ -1,0 +1,33 @@
+@use '../variables'
+
+#user-card
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 2em
+    border-radius: variables.$card-border
+    box-shadow: variables.$box-shadow
+
+    .user__data
+        display: flex
+        width: 100%
+        gap: 10%
+
+        p
+            font-size: 20px
+
+        span
+            font-weight: bold
+
+    .user__actions
+        display: flex
+        align-items: center
+        gap: 1em
+
+        span
+            font-size: 20px
+            cursor: pointer
+            transition: .4s
+
+            &:hover
+                color: variables.$color-main
