@@ -1,7 +1,10 @@
+import FormUser from "../components/formuser";
+
 export default function Login(){
+    console.log(window)
     return (
         <div>
-            olá, mundo!
+            <FormUser title="Login" />
         </div>
     )
 }

@@ -2,16 +2,40 @@ import "../styles/components/usercard.sass"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons"
+import { useEffect, useState } from "react";
+import api from "../config";
+import { IUser } from "../interfaces/user";
 
 const UserCard = () => {
+    const [users, setUsers] = useState<IUser[]>([]);
+
+    function getUsers(){
+        api
+        .get("/users")
+        .then((response) => {
+            setUsers(response.data)
+        })
+        .catch((error) => {
+            return console.log(error)
+        })
+    }
+
+    useEffect(() => {
+        getUsers();
+    }, []);
+
     return (
         <div id="user-card">
-
             <section className="user__data">
-                <p> <span> Nome: </span> Diogo Dognini Corrêa </p>
-                <p> <span> E-mail: </span> diogo.correia@gruppe.com.br </p>
+                {users.map((user, index) => {
+                    return (
+                        <div key={index}>
+                            <p> <span> Nome: </span>{user.name}</p>
+                            <p> <span> E-mail: </span>{user.email}</p>
+                        </div>
+                    )
+                })}
             </section>
-
             <section className="user__actions">
                 <span> <FontAwesomeIcon icon={faEye} /> </span>
 
