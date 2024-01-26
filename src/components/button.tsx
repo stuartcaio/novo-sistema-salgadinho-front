@@ -1,11 +1,6 @@
 import "../styles/components/button.sass"
 
-interface ButtonProps {
-    children: string
-    onclick?: React.MouseEventHandler<HTMLButtonElement>
-}
-
-const Button = ({ children, onclick }: ButtonProps) => {
+const Button = ({ children, onclick }: { children: string, onclick: React.MouseEventHandler<HTMLButtonElement> }) => {
     return (
         <button id="button" onClick={onclick}> {children} </button>
     )

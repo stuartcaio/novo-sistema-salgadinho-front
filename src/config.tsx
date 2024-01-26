@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
 
 const api = axios.create({
@@ -8,7 +9,7 @@ const api = axios.create({
 api.interceptors.request.use((request) => {
     const token = localStorage.getItem("token");
 
-    if(token){
+    if (token) {
         request.headers.Authorization = `Bearer ${token}`;
     }
 
@@ -17,12 +18,14 @@ api.interceptors.request.use((request) => {
 
 api.interceptors.response.use((response) => {
     return response;
+
 }, (error) => {
-    if(error.response.status === 401){
+
+    if (error.response.status === 401) {
         window.location.href = "/page401";
     }
 
-    if(error.reponse.status === 403){
+    if (error.reponse.status === 403) {
         window.location.href = "/page404";
     }
 

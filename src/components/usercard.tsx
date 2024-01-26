@@ -1,23 +1,25 @@
 import "../styles/components/usercard.sass"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEye, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react";
+
 import api from "../config";
 import { IUser } from "../interfaces/user";
 
-const UserCard = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEye, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons"
+
+export default function UserCard() {
     const [users, setUsers] = useState<IUser[]>([]);
 
-    function getUsers(){
+    function getUsers() {
         api
-        .get("/users")
-        .then((response) => {
-            setUsers(response.data)
-        })
-        .catch((error) => {
-            return console.log(error)
-        })
+            .get("/users")
+            .then((response) => {
+                setUsers(response.data)
+            })
+            .catch((error) => {
+                return console.log(error)
+            })
     }
 
     useEffect(() => {
@@ -26,7 +28,9 @@ const UserCard = () => {
 
     return (
         <div id="user-card">
+
             <section className="user__data">
+
                 {users.map((user, index) => {
                     return (
                         <div key={index}>
@@ -35,7 +39,9 @@ const UserCard = () => {
                         </div>
                     )
                 })}
+
             </section>
+
             <section className="user__actions">
                 <span> <FontAwesomeIcon icon={faEye} /> </span>
 
@@ -47,5 +53,3 @@ const UserCard = () => {
         </div>
     )
 }
-
-export default UserCard
