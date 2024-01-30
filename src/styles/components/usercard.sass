@@ -7,17 +7,27 @@
     padding: 2em
     border-radius: variables.$card-border
     box-shadow: variables.$box-shadow
+    background-color: #efefef
 
     .user__data
         display: flex
+        flex-wrap: wrap
         width: 100%
-        gap: 10%
+        gap: 0.5rem
+
+        padding: 0.5rem
 
         p
             font-size: 20px
 
         span
             font-weight: bold
+
+        div
+            background-color: white
+            padding: 1rem
+            border-radius: 10px
+            border-style: none
 
     .user__actions
         display: flex

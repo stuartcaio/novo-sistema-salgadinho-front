@@ -14,19 +14,20 @@ api.interceptors.request.use((request) => {
     }
 
     return request;
+}, (error) => {
+    console.log(error.response.status)
 });
 
 api.interceptors.response.use((response) => {
     return response;
-
 }, (error) => {
 
     if (error.response.status === 401) {
-        window.location.href = "/page401";
+        window.location.href = "/erro401";
     }
 
-    if (error.reponse.status === 403) {
-        window.location.href = "/page404";
+    if (error?.response?.data?.message === "Token has expired") {
+        window.location.href = "/erro498";
     }
 
     return Promise.reject(error);

@@ -1,11 +1,19 @@
+import { Dispatch, SetStateAction } from "react"
+import { Pagination } from "../interfaces/pagination"
 import "../styles/components/paginate.sass"
+import changeState from "../functions/states/changeState"
 
-const Paginate = () => {
+interface Props{
+    paginationValues: Pagination,
+    setPaginationValues: Dispatch<SetStateAction<Pagination>>
+}
+
+const Paginate = (props: Props) => {
     return (
         <footer id='paginate'>
-            <button> Pagina Anterior </button>
-            <span> 1 de 99 </span>
-            <button> Proxima Pagina </button>
+            <button onClick={() => changeState(props.setPaginationValues, "currentPage", props.paginationValues.currentPage - 1)}> Pagina Anterior </button>
+            <span> {props.paginationValues.currentPage} de 99 </span>
+            <button onClick={() => changeState(props.setPaginationValues, "currentPage", props.paginationValues.currentPage + 1)}> Proxima Pagina </button>
         </footer>
     )
 }
